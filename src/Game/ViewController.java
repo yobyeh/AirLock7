@@ -1,11 +1,25 @@
 package Game;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+//pop up woindow for map.. map button
+//
 
 
-public class ViewController {
 
 
+
+public class ViewController implements ActionListener{
+
+GameController gc;
+
+JLabel text = new JLabel("Text", SwingConstants.CENTER);
+
+public void giveGameController(GameController gc){
+    this.gc = gc;
+}
 
 
 public void startDisplay(){
@@ -32,7 +46,7 @@ public void startDisplay(){
     constraints.fill = GridBagConstraints.BOTH;
     panelMain.add(label1, constraints);
 
-    JLabel text = new JLabel("Text", SwingConstants.CENTER);
+    
     //text.setBackground(Color.red);
     //text.setOpaque(true);
     constraints = new GridBagConstraints();
@@ -225,40 +239,26 @@ public void startDisplay(){
     //constraints.weighty = 1;
     //constraints.fill = GridBagConstraints.BOTH;
     panelMain.add(space7, constraints);
-
-
-    // // Create labels with fixed size
-    // JLabel label1 = new JLabel("Label 1");
-    // label1.setPreferredSize(new Dimension(200, 400));
-
-    // JTextArea textArea = new JTextArea("Label 2");
-    // textArea.setPreferredSize(new Dimension(400, 400));
-
-    // JLabel label3 = new JLabel("Label 3");
-    // label3.setPreferredSize(new Dimension(200, 400));
-    // JLabel label4 = new JLabel("Label 4");
-    // label4.setPreferredSize(new Dimension(600, 200));
     
-    // JLabel label6 = new JLabel("Label 6");
-    // label6.setPreferredSize(new Dimension(100, 200));
-    // JLabel label9 = new JLabel("Label 9");
-    // label9.setPreferredSize(new Dimension(500, 200));
-
-    // JButton up = new JButton("^");
-    // up.setPreferredSize(new Dimension(100, 200));
-    // JButton left = new JButton("<");
-    // left.setPreferredSize(new Dimension(100, 200));
-    // JButton down = new JButton("V");
-    // down.setPreferredSize(new Dimension(100, 200));
-    // JButton right = new JButton(">");
-    // right.setPreferredSize(new Dimension(100, 200));
-
-
+    
     frame.getContentPane().add(panelMain);
     //frame.pack();
     frame.setVisible(true);
 
 
+}
+
+public void setTextbox(String s){
+
+text.setText(s);
+
+
+}
+
+@Override
+public void actionPerformed(ActionEvent e) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
 }
 
 
