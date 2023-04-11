@@ -11,6 +11,10 @@ public class GameController {
     public void startGame(){
 
         vc.setTextbox("test test test");
+
+
+        ///game loop
+
     
     
     }

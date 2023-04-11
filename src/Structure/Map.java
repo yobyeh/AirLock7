@@ -1,5 +1,6 @@
 package Structure;
 
+//owned by game controller 
 
 //stores each locked door in a bool 
 
