@@ -15,7 +15,7 @@ public class StoryText {
     String eventPuzzle2 = "You find a keypad that requires 4 numbers in order to unlock.";
 
     //Event: Unsuccessfully guessing storage room password
-    String eventPuzzle3: "The code you enter is incorrect. Nothing happens.";
+    String eventPuzzle3 = "The code you enter is incorrect. Nothing happens.";
 
     //Event: Successfully guessing storage room password
     String eventPuzzle4 = "You guess the passcode correctly. The door to storage slides open!";
@@ -24,14 +24,14 @@ public class StoryText {
     String eventPuzzle5 = "You realize are missing the necessary tools to fix the engine.";
 
     //Event: Fixing broken down ship engine
-    String eventPuzzle6: "The engine purrs to life.";
+    String eventPuzzle6 = "The engine purrs to life.";
 
     //Event: Placing insterstellar map in bridge console
-    String eventPuzzle7: "You place the interstellar map in the console and the ship's "
+    String eventPuzzle7 = "You place the interstellar map in the console and the ship's "
         + "screens light up.";
 
     //Event: Flying home
-    String eventPuzzle8: "You set your destination. You are now boldly flying...home! "
+    String eventPuzzle8 = "You set your destination. You are now boldly flying...home! "
         + "Congratulations, spacefarer!";
 
     //-----------These are the item related events-----------
