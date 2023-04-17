@@ -5,13 +5,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 //pop up woindow for map.. map button
-//
+//splash screen ?
 
 
 
 
 
 public class ViewController implements ActionListener{
+
+JButton up;
+JButton down;
+JButton left;
+JButton right;
 
 GameController gc;
 
@@ -83,7 +88,9 @@ public void startDisplay(){
     constraints.fill = GridBagConstraints.BOTH;
     panelMain.add(questBox, constraints);
 
-    JButton up = new JButton("^");
+
+    // up button --------------------------------
+    up = new JButton("^");
     constraints = new GridBagConstraints();
     constraints.gridx = 6;
     constraints.gridy = 1;
@@ -92,6 +99,7 @@ public void startDisplay(){
     constraints.weightx = 1;
     constraints.weighty = 1;
     constraints.fill = GridBagConstraints.BOTH;
+    up.addActionListener(this);
     panelMain.add(up, constraints);
 
     JLabel label3 = new JLabel("");
@@ -118,7 +126,8 @@ public void startDisplay(){
     constraints.fill = GridBagConstraints.BOTH;
     panelMain.add(items, constraints);
 
-    JButton left = new JButton("<");
+    //left button ------------------------------------
+    left = new JButton("<");
     constraints = new GridBagConstraints();
     constraints.gridx = 5;
     constraints.gridy = 2;
@@ -127,9 +136,12 @@ public void startDisplay(){
     constraints.weightx = 1;
     constraints.weighty = 1;
     constraints.fill = GridBagConstraints.BOTH;
+    left.addActionListener(this);
     panelMain.add(left, constraints);
 
-    JButton down = new JButton("V");
+
+    //down button ------------------------------------
+    down = new JButton("V");
     constraints = new GridBagConstraints();
     constraints.gridx = 6;
     constraints.gridy = 2;
@@ -138,9 +150,11 @@ public void startDisplay(){
     constraints.weightx = 1;
     constraints.weighty = 1;
     constraints.fill = GridBagConstraints.BOTH;
+    down.addActionListener(this);
     panelMain.add(down, constraints);
 
-    JButton right = new JButton(">");
+    //right button -----------------------------------
+    right = new JButton(">");
     constraints = new GridBagConstraints();
     constraints.gridx = 7;
     constraints.gridy = 2;
@@ -149,6 +163,7 @@ public void startDisplay(){
     constraints.weightx = 1;
     constraints.weighty = 1;
     constraints.fill = GridBagConstraints.BOTH;
+    right.addActionListener(this);
     panelMain.add(right, constraints);
 
     //spacers
@@ -255,10 +270,21 @@ text.setText(s);
 
 }
 
-@Override
+
 public void actionPerformed(ActionEvent e) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+    if(e.getSource() == up){
+        gc.upButton();
+    }
+    if(e.getSource() == down){
+        gc.downButton();
+    }
+    if(e.getSource() == left){
+        gc.leftButton();
+    }
+    if(e.getSource() == right){
+        gc.rightButton();
+    }
+
 }
 
 
