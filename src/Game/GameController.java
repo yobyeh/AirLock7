@@ -23,7 +23,7 @@ public class GameController {
         map = new GameMap();
 
         //new player + starting spot
-        player = new Player(0, 0);
+        player = new Player(map.xStart, map.yStart);
 
         //intro
         st = new StoryText();

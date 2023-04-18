@@ -26,6 +26,9 @@ public class GameMap {
     int xSize = 21;
     int ySize = 10;
 
+    public int xStart = 13;
+    public int yStart = 10;
+
     ArrayList<ArrayList<Integer>> x = new ArrayList<ArrayList<Integer>>();
 
     ArrayList<Integer> map = new ArrayList<Integer>();
