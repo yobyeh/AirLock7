@@ -44,42 +44,62 @@ public class GameMap {
 
     //check if can move direction given current position
     //walls and doors
-    public Boolean moveCheck(String s, int x, int y){
+    public Boolean moveCheck(String s, int xCurrent, int yCurrent){
 
         switch (s) {
             case "up":{
-
-                if(y == 0){
+                int newY = yCurrent - 1;
+                if(yCurrent == 0){
                     return false;
                 }
 
+                if(x.get(xCurrent).get(newY) == 1){
+                    return false;
+                }else{
+                    return true;
+                }
+
             }
-                     break;
             case "down":{
 
-                if(y == ySize - 1){
+                int newY = yCurrent + 1;
+                if(yCurrent == ySize - 1){
                     return false;
                 }
 
+                if(x.get(xCurrent).get(newY) == 1){
+                    return false;
+                }else{
+                    return true;
+                }
 
             }
-                     break;
             case "left":{
-
-                if(x ==  0){
+                int newX = xCurrent - 1;
+                if(xCurrent ==  0){
                     return false;
                 }
 
+                if(x.get(newX).get(yCurrent) == 1){
+                    return false;
+                }else{
+                    return true;
+                }
+
             }
-                     break;
             case "right":{
-
-                if(x == xSize - 1){
+                int newX = xCurrent + 1;
+                if(xCurrent == xSize - 1){
                     return false;
                 }
 
+                if(x.get(newX).get(yCurrent) == 1){
+                    return false;
+                }else{
+                    return true;
+                }
+
             }
-                     break;
         }
 
         return true;
@@ -118,14 +138,14 @@ public class GameMap {
                 
                 x.get(j).add(map.get(mapIndex));
                 mapIndex++;
-            } 
+            }
         }
     }
 
     private void loadMapToArray(){
 
         //the map..
-        //1s are walls 0s are open spaces
+        //1s are walls and objects 0s are open spaces
         map.addAll(Arrays.asList(
         0,0,1,1,1,
              1,0,1,1,1,

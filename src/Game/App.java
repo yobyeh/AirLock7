@@ -10,9 +10,5 @@ public class App {
         gc.startGame();
        
 
-        
-
-
-
     }
 }
