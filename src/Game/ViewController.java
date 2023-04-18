@@ -20,7 +20,8 @@ JButton right;
 
 GameController gc;
 
-JLabel text = new JLabel("Text", SwingConstants.CENTER);
+JLabel text;
+JLabel locationBox;
 
 public void giveGameController(GameController gc){
     this.gc = gc;
@@ -51,7 +52,7 @@ public void startDisplay(){
     constraints.fill = GridBagConstraints.BOTH;
     panelMain.add(label1, constraints);
 
-    
+    text = new JLabel("Text", SwingConstants.CENTER);
     //text.setBackground(Color.red);
     //text.setOpaque(true);
     constraints = new GridBagConstraints();
@@ -77,16 +78,18 @@ public void startDisplay(){
     constraints.fill = GridBagConstraints.BOTH;
     panelMain.add(label2, constraints);
 
-    JLabel questBox = new JLabel("Quest", SwingConstants.CENTER);
+    locationBox = new JLabel("Current location", SwingConstants.CENTER);
+    locationBox.setBackground(Color.gray);
+    locationBox.setOpaque(true);
     constraints = new GridBagConstraints();
     constraints.gridx = 0;
     constraints.gridy = 1;
-    constraints.gridwidth = 5;
+    constraints.gridwidth = 6;
     //constraints.gridheight = 1;
     constraints.weightx = 1;
     constraints.weighty = 1;
     constraints.fill = GridBagConstraints.BOTH;
-    panelMain.add(questBox, constraints);
+    panelMain.add(locationBox, constraints);
 
 
     // up button --------------------------------
@@ -264,10 +267,11 @@ public void startDisplay(){
 }
 
 public void setTextbox(String s){
+    text.setText(s);
+}
 
-text.setText(s);
-
-
+public void setLocationBox(String s){
+    locationBox.setText(s);
 }
 
 

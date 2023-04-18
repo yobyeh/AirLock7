@@ -10,6 +10,7 @@ public class GameController {
     ViewController vc;
     GameMap map;
     Player player;
+    StoryText st;
 
     public GameController(ViewController vc){
         this.vc = vc;
@@ -24,14 +25,10 @@ public class GameController {
         //new player + starting spot
         player = new Player(0, 0);
 
-        vc.setTextbox("test test test");
+        //intro
+        st = new StoryText();
+        vc.setTextbox(st.start);
 
-
-
-        //game loop
-
-    
-    
     }
 
     public void upButton(){
@@ -47,6 +44,7 @@ public class GameController {
         if(map.moveCheck("down", player.getX(), player.getY())){
             player.setY(player.getY() + 1);
             updateLocationView();
+            updateTextBox();
         }
     }
 
@@ -55,6 +53,7 @@ public class GameController {
         if(map.moveCheck("left", player.getX(), player.getY())){
             player.setX(player.getX() - 1);
             updateLocationView();
+            updateTextBox();
         }
     }
 
@@ -63,16 +62,23 @@ public class GameController {
         if(map.moveCheck("right", player.getX(), player.getY())){
             player.setX(player.getX() + 1);
             updateLocationView();
+            updateTextBox();
         }
     }
     
     public void updateLocationView(){
 
-        vc.setTextbox(player.getX() + " , " + player.getY());
+        vc.setLocationBox("Current Location: " + player.getX() + "," + player.getY());
 
     }
     
-   
+    public void updateTextBox(){
+
+        
+
+
+
+    }
 
 
 
