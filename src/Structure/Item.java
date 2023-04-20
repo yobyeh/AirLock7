@@ -5,7 +5,11 @@ import java.awt.Point;
 //value is item name
 
 //items..
-//
+//Map
+//Code
+//Key
+//Wrench
+//Bolt
 public class Item {
     
     Point p;
