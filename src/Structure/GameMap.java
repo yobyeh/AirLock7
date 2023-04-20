@@ -1,11 +1,12 @@
 package Structure;
 
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 //todo.... doors in move check 
-//implement walls
 //implement doors
+//implement locked storage 
 //implement items
 
 
@@ -26,13 +27,21 @@ public class GameMap {
     int xSize = 21;
     int ySize = 10;
 
-    public int xStart = 13;
-    public int yStart = 10;
+    public int xStart = 13 - 1;
+    public int yStart = 10 - 1;
 
     ArrayList<ArrayList<Integer>> x = new ArrayList<ArrayList<Integer>>();
-
     ArrayList<Integer> map = new ArrayList<Integer>();
-    
+
+    //Door Unlocked and location
+    Boolean bridgeLock = false;
+    Point bridgeDoor = new Point(16,5);
+    Boolean storageLock = false;
+    Point storageDoor = new Point(5,4);
+    Boolean engineLock = false;
+    Point engineDoor = new Point(4,7);
+    Boolean airlockLock = true;
+    Point airlockDoor = new Point(14,7);
 
     public GameMap(){
 
@@ -56,7 +65,12 @@ public class GameMap {
                     return false;
                 }
 
-                if(x.get(xCurrent).get(newY) == 1){
+                if(
+                    //next is a wall or
+                    x.get(xCurrent).get(newY) == 1
+                    //|| lockedStorage() == true
+                
+                ){
                     return false;
                 }else{
                     return true;
@@ -109,6 +123,24 @@ public class GameMap {
     }
 
 
+    //attempting to walk up through storage door
+    private boolean lockedStorage() {
+
+        if(storageLock = true){
+            //gc.storageKeypad();
+
+            if(storageLock = true){
+               return true; 
+            }else{
+              return false;  
+            }
+            
+        }
+
+
+        return true;
+        
+    }
 
     private void printMapToConsole() {
 
