@@ -5,6 +5,8 @@ import Structure.GameMap;
 
 //todo... 
 //implement text
+//items
+//doors
 
 public class GameController {
     ViewController vc;

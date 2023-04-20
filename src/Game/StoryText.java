@@ -76,6 +76,7 @@ public class StoryText {
         //String eventPuzzle3 = "The code you enter is incorrect. Nothing happens.";
 
         //Event: Successfully guessing storage room password
+        //location: 4,2
         String eventPuzzle4 = "You guess the passcode correctly. The door to storage slides open!";
 
         //Event: Missing tools to fix broken down ship engine

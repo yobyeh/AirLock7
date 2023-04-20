@@ -38,8 +38,6 @@ public class GameMap {
     Point bridgeDoor = new Point(16,5);
     Boolean storageLock = false;
     Point storageDoor = new Point(5,4);
-    Boolean engineLock = false;
-    Point engineDoor = new Point(4,7);
     Boolean airlockLock = true;
     Point airlockDoor = new Point(14,7);
 
