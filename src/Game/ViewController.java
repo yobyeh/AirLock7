@@ -1,5 +1,8 @@
 package Game;
 import javax.swing.*;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,7 +23,7 @@ JButton right;
 
 GameController gc;
 
-JTextArea text;
+JTextPane text;
 JLabel locationBox;
 JTextArea label2;
 
@@ -53,21 +56,24 @@ public void startDisplay(){
     constraints.fill = GridBagConstraints.BOTH;
     panelMain.add(label1, constraints);
 
-    text = new JTextArea("Text");
-    //text.setBackground(Color.red);
-    //text.setOpaque(true);
+    text = new JTextPane();
+    SimpleAttributeSet attributes = new SimpleAttributeSet();
+    StyleConstants.setAlignment(attributes, StyleConstants.ALIGN_CENTER);
+    StyleConstants.setFontSize(attributes, 18);
+    StyleConstants.setFontFamily(attributes, "Dialog");
+    text.setParagraphAttributes(attributes, true);
     constraints = new GridBagConstraints();
     constraints.gridx = 2;
     constraints.gridy = 0;
     constraints.gridwidth = 4;
-    //constraints.gridheight = 1;
     constraints.weightx = 1;
     constraints.weighty = 1;
     constraints.fill = GridBagConstraints.BOTH;
     panelMain.add(text, constraints);
 
     //.get 
-    label2 = new JTextArea("Storage Password");
+    label2 = new JTextArea("Storage Password: ");
+    label2.setFont(new Font("Dialog", Font.BOLD, 14));
     label2.setBackground(Color.gray);
     label2.setOpaque(true);
     constraints = new GridBagConstraints();
@@ -81,7 +87,8 @@ public void startDisplay(){
     label2.setVisible(false);
     panelMain.add(label2, constraints);
 
-    locationBox = new JLabel("Current location", SwingConstants.CENTER);
+    locationBox = new JLabel("Current Location", SwingConstants.CENTER);
+    locationBox.setFont(new Font("Dialog", Font.BOLD, 14));
     locationBox.setBackground(Color.gray);
     locationBox.setOpaque(true);
     constraints = new GridBagConstraints();
