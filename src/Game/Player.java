@@ -28,6 +28,14 @@ public class Player {
         //inventory.addItem("Item Name");
     }
 
+    //checks for items by string
+    public boolean has(String string) {
+
+        //search function on inventory
+
+        return false;
+    }
+
     public int getX(){
         return xLocation;
     }
@@ -48,8 +56,4 @@ public class Player {
         return new Point(xLocation, yLocation);
     }
 
-
-
-
-    
 }

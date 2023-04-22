@@ -44,8 +44,8 @@ public class GameMap {
     Point bridgeDoor = new Point(16,5);
     Boolean storageLock = true;
     Point storageDoor = new Point(5,4);
-    Boolean airlockLock = true;
-    Point airlockDoor = new Point(14,7);
+    //Boolean airlockLock = true;
+    //Point airlockDoor = new Point(14,7);
 
     public GameMap(ViewController vc){
 
@@ -120,10 +120,17 @@ public class GameMap {
 
                 if(x.get(newX).get(yCurrent) == 1){
                     return false;
-                }else{
-                    return true;
                 }
 
+                if(player.getPlayerPoint().equals(bridgeDoor)){
+                    if(lockedBridge()){
+                        return false;
+                    }else{
+                        return true;
+                    }
+                }
+
+                return true;
             }
         }
 
@@ -147,6 +154,26 @@ public class GameMap {
         }else{
             return false;
         }
+    }
+
+    private boolean lockedBridge() {
+
+        if(bridgeLock == true){
+
+            if(player.has("KeyCard")){
+                bridgeLock = false;
+                return false;
+            }
+
+
+
+
+            return true;
+        }else{
+            return false;
+        }
+
+
     }
 
     private void printMapToConsole() {
