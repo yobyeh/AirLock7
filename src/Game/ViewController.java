@@ -20,8 +20,9 @@ JButton right;
 
 GameController gc;
 
-JLabel text;
+JTextArea text;
 JLabel locationBox;
+JTextArea label2;
 
 public void giveGameController(GameController gc){
     this.gc = gc;
@@ -52,7 +53,7 @@ public void startDisplay(){
     constraints.fill = GridBagConstraints.BOTH;
     panelMain.add(label1, constraints);
 
-    text = new JLabel("Text", SwingConstants.CENTER);
+    text = new JTextArea("Text");
     //text.setBackground(Color.red);
     //text.setOpaque(true);
     constraints = new GridBagConstraints();
@@ -65,7 +66,8 @@ public void startDisplay(){
     constraints.fill = GridBagConstraints.BOTH;
     panelMain.add(text, constraints);
 
-    JLabel label2 = new JLabel("");
+    //.get 
+    label2 = new JTextArea("Storage Password");
     label2.setBackground(Color.gray);
     label2.setOpaque(true);
     constraints = new GridBagConstraints();
@@ -76,6 +78,7 @@ public void startDisplay(){
     constraints.weightx = 1;
     constraints.weighty = 1;
     constraints.fill = GridBagConstraints.BOTH;
+    label2.setVisible(false);
     panelMain.add(label2, constraints);
 
     locationBox = new JLabel("Current location", SwingConstants.CENTER);
@@ -292,6 +295,18 @@ public void actionPerformed(ActionEvent e) {
 }
 
 
+public void showPasswordArea(){
+    label2.setVisible(true);
+}
+
+public void hidePasswordArea(){
+    label2.setVisible(false);
+}
+
+public String getPassword(){
+
+    return label2.getText();
+}
 
 
 

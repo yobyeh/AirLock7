@@ -1,5 +1,7 @@
 package Game;
 
+import java.awt.Point;
+
 import Structure.HashTable;
 
 //todo: display text dosent repeat "YAY YOU PICKED THIS UP" every time.
@@ -40,6 +42,10 @@ public class Player {
 
     public void setX(int x) {
         xLocation = x;
+    }
+
+    public Point getPlayerPoint(){
+        return new Point(xLocation, yLocation);
     }
 
 

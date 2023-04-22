@@ -22,10 +22,12 @@ public class GameController {
     public void startGame(){
 
         //build map
-        map = new GameMap();
+        map = new GameMap(vc);
 
         //new player + starting spot
         player = new Player(map.xStart, map.yStart);
+
+        map.givePlayer(player);
 
         //intro
         st = new StoryText();
@@ -34,7 +36,7 @@ public class GameController {
     }
 
     public void upButton(){
-        //vc.setTextbox("up");
+
         if(map.moveCheck("up", player.getX(), player.getY())){
             player.setY(player.getY() - 1);
             updateLocationView();

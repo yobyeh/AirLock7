@@ -20,9 +20,9 @@ public class StoryText {
     ArrayList<Stack<String>> textStacks = new ArrayList<Stack<String>>();
 
     //Starting game
-    String start = "You wake up in AirLock 7, feeling dazed and confused. "
-    + "The rest of your crew has been killed or kidnapped, and you're thankful "
-    + "that you were quick enough to hide before the same thing happened to you.";
+    String start = "You wake up in AirLock 7, feeling dazed and confused. \n"
+    + "The rest of your crew has been killed or kidnapped, and you're thankful \n"
+    + "that you were quick enough to hide before the same thing happened to you. ";
 
     public StoryText(){
         loadText();

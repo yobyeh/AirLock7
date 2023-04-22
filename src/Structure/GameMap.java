@@ -4,6 +4,9 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import Game.Player;
+import Game.ViewController;
+
 //todo.... doors in move check 
 //implement doors
 //implement locked storage 
@@ -30,18 +33,23 @@ public class GameMap {
     public int xStart = 13 - 1;
     public int yStart = 10 - 1;
 
+    ViewController vc;
+    Player player;
+
     ArrayList<ArrayList<Integer>> x = new ArrayList<ArrayList<Integer>>();
     ArrayList<Integer> map = new ArrayList<Integer>();
 
     //Door Unlocked and location
-    Boolean bridgeLock = false;
+    Boolean bridgeLock = true;
     Point bridgeDoor = new Point(16,5);
-    Boolean storageLock = false;
+    Boolean storageLock = true;
     Point storageDoor = new Point(5,4);
     Boolean airlockLock = true;
     Point airlockDoor = new Point(14,7);
 
-    public GameMap(){
+    public GameMap(ViewController vc){
+
+        this.vc = vc;
 
         loadMapToArray();
 
@@ -63,17 +71,19 @@ public class GameMap {
                     return false;
                 }
 
-                if(
-                    //next is a wall or
-                    x.get(xCurrent).get(newY) == 1
-                    //|| lockedStorage() == true
-                
-                ){
+                if(x.get(xCurrent).get(newY) == 1){
                     return false;
-                }else{
-                    return true;
                 }
-
+                
+                if(player.getPlayerPoint().equals(storageDoor)){
+                    if(lockedStorage()){
+                        return false;
+                    }else{
+                        return true;
+                    }
+                }
+                
+                return true;
             }
             case "down":{
 
@@ -124,20 +134,19 @@ public class GameMap {
     //attempting to walk up through storage door
     private boolean lockedStorage() {
 
-        if(storageLock = true){
-            //gc.storageKeypad();
-
-            if(storageLock = true){
-               return true; 
+        if(storageLock == true){
+            vc.showPasswordArea();
+            if(vc.getPassword().equals("4571")){
+                storageLock = false;
+                return false;
             }else{
-              return false;  
+                return true;
             }
+
             
+        }else{
+            return false;
         }
-
-
-        return true;
-        
     }
 
     private void printMapToConsole() {
@@ -191,6 +200,10 @@ public class GameMap {
              0,0,0,1,1,0,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,
              1,1,1,1,1,0,0,0,0,1,1,1,0,0,0,1,1,1,1,1,1
         ));
+    }
+
+    public void givePlayer(Player player) {
+        this.player = player;
     }
 
 
