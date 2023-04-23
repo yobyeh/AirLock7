@@ -72,7 +72,7 @@ public void startDisplay(){
     panelMain.add(text, constraints);
 
     //.get 
-    label2 = new JTextArea("Storage Password: ");
+    label2 = new JTextArea("Storage Password");
     label2.setFont(new Font("Dialog", Font.BOLD, 14));
     label2.setBackground(Color.gray);
     label2.setOpaque(true);
