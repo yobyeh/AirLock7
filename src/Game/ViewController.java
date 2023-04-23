@@ -1,9 +1,20 @@
+/**
+*This is our main controller. It displays the GUI to
+*the player, including buttons, locations, text, etc.
+* 
+* @authors  John Patrick, Luis K. Pena, Sergio Costa
+* @version  1.0
+* @since    04/20/2023
+*/
+
+//Package(s)
 package Game;
+
+//Imports
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,25 +24,25 @@ import java.io.IOException;
 //pop up woindow for map.. map button
 //splash screen ?
 
-
-
-
-
 public class ViewController implements ActionListener{
 
+//Instantiating button variables
 JButton up;
 JButton down;
 JButton left;
 JButton right;
 
+//Instantiating controller
 GameController gc;
 
+//Instantiating JFrame components
 JTextPane text;
 JLabel locationBox;
 //JTextArea label2;
 ImageBackgroundPasswordField label2;
 JScrollPane textScrollPane;
 
+//Instantiating GUI images
 private Image imageStorage;
 private ImageIcon iconUP;
 private ImageIcon iconDown;
@@ -41,18 +52,20 @@ private ImageIcon iconRight;
 
 public ViewController(){
 
+    //Starting display
     loadimages();
-
 }
 
 private void loadimages() {
 
+    //Try/catch methods
     try{
         imageStorage = ImageIO.read(getClass().getResource("/Resources/storagePassword1.png"));
     } catch(IOException e) {
         System.out.println(e.toString());
     }
 
+    //Setting images for important icons
     iconUP = new ImageIcon(getClass().getResource("/Resources/UpKey.png"));
     //Image scaleUP = iconUP.getImage();
     //scaleUP = scaleUP.getScaledInstance(200, 200, Image.SCALE_SMOOTH);
@@ -68,7 +81,6 @@ public void giveGameController(GameController gc){
     this.gc = gc;
 }
 
-
 public void startDisplay(){
 
     JFrame frame = new JFrame("AirLock7");
@@ -81,7 +93,7 @@ public void startDisplay(){
     panelMain.setBackground(Color.gray);
     GridBagConstraints constraints = new GridBagConstraints();
     
-    //Create labels with fixed size
+    //Creatin labels with fixed size
     JLabel label1 = new JLabel("");
     label1.setBackground(Color.gray);
     label1.setOpaque(true);
@@ -95,6 +107,7 @@ public void startDisplay(){
     constraints.fill = GridBagConstraints.BOTH;
     panelMain.add(label1, constraints);
 
+    ////-----------Text Event Display Pannel-----------////
     text = new JTextPane();
     SimpleAttributeSet attributes = new SimpleAttributeSet();
     StyleConstants.setAlignment(attributes, StyleConstants.ALIGN_CENTER);
@@ -102,8 +115,7 @@ public void startDisplay(){
     StyleConstants.setFontFamily(attributes, "Dialog");
     text.setParagraphAttributes(attributes, true);
 
-
-
+    
     textScrollPane = new JScrollPane(text);
     textScrollPane.setPreferredSize(new Dimension(300, 60));
     constraints = new GridBagConstraints();
@@ -115,7 +127,7 @@ public void startDisplay(){
     constraints.fill = GridBagConstraints.BOTH;
     panelMain.add(textScrollPane, constraints);
 
-    //Storage Password
+    ////-----------Password Display Pannel-----------////
     label2 = new ImageBackgroundPasswordField(imageStorage);
     label2.setFont(new Font("Dialog", Font.BOLD, 14));
     label2.setBackground(Color.gray);
@@ -132,6 +144,7 @@ public void startDisplay(){
     label2.setVisible(false);
     panelMain.add(label2, constraints);
 
+    ////-----------Location Display Pannel-----------////
     locationBox = new JLabel("Current Location: 12,9", SwingConstants.CENTER);
     locationBox.setFont(new Font("Dialog", Font.BOLD, 14));
     locationBox.setBackground(Color.gray);
@@ -148,7 +161,7 @@ public void startDisplay(){
     panelMain.add(locationBox, constraints);
 
 
-    // up button --------------------------------
+    ////-----------Up Button Display-----------////
     up = new JButton("");
     up.setPreferredSize(new Dimension(70, 50));
     up.setIcon(iconUP);
@@ -188,7 +201,7 @@ public void startDisplay(){
     constraints.fill = GridBagConstraints.BOTH;
     panelMain.add(items, constraints);
 
-    //left button ------------------------------------
+    ////-----------Left Button Display-----------////
     left = new JButton("<");
     left.setPreferredSize(new Dimension(50, 50));
     left.setIcon(iconLeft);
@@ -203,8 +216,7 @@ public void startDisplay(){
     left.addActionListener(this);
     panelMain.add(left, constraints);
 
-
-    //down button ------------------------------------
+    ////-----------Down Button Display-----------////
     down = new JButton("V");
     down.setPreferredSize(new Dimension(50, 50));
     constraints = new GridBagConstraints();
@@ -219,7 +231,7 @@ public void startDisplay(){
     down.addActionListener(this);
     panelMain.add(down, constraints);
 
-    //right button -----------------------------------
+    ////-----------Right Button Display-----------////
     right = new JButton(">");
     right.setPreferredSize(new Dimension(50, 50));
     constraints = new GridBagConstraints();
@@ -234,7 +246,7 @@ public void startDisplay(){
     right.addActionListener(this);
     panelMain.add(right, constraints);
 
-    //spacers
+    ////-----------Spacers Display-----------////
     JLabel space0 = new JLabel("0");
     constraints = new GridBagConstraints();
     constraints.gridx = 0; 

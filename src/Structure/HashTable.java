@@ -1,16 +1,23 @@
+/**
+*This is our HashTable data structure. It is used to
+*by the inventory class in order to store items 
+*that are necessary for game progression. Each item
+*is stored a string and we use comparisons to check 
+*if a user has the item in their inventory.
+* 
+* @authors  John Patrick, Luis K. Pena, Sergio Costa
+* @version  1.0
+* @since    04/20/2023
+*/
+
+//Package(s)
 package Structure;
 
+//Imports
 import java.awt.Point;
-//Importing packages
 import java.util.*;
 
-//to store items the player has picked up
-//bool check given item String to see if it has been stored 
-//implemented in player class
-//sorted array output for view to display items in order 
 
-//modified hash table for inventory with points as keys
-//if game expanded to have more items this will be able to handle all the items easily
 public class HashTable {
 
     //Instantiating global variables
@@ -37,6 +44,7 @@ public class HashTable {
         return index;
     }
 
+    //Item add to HashTable function 
     public void put(Point keyPoint, String value){
 
         int index = getHashIndex(keyPoint);
@@ -84,6 +92,7 @@ public class HashTable {
         }
     }
 
+    //Item search function
     public Item search(Point keyPoint){
 
         int index = getHashIndex(keyPoint);
@@ -116,12 +125,16 @@ public class HashTable {
         return null;
     }
 
+    //Funtion to print items
     public void print(){
 
+        //Iterating over HashTable
         for(int i = 0; i < tableSize; i++){
 
+            //If bucket is not empty
             if(table[i] != null){
 
+                //Print item and item name to screen
                 for(int j = 0; j < table[i].size(); j++){
 
                     Item item = table[i].get(j);
@@ -130,5 +143,4 @@ public class HashTable {
             }
         }
     }
-
 }

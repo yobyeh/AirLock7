@@ -1,21 +1,24 @@
 /**
- *These are the text based events for our game, AirLock7.
- *Events are stored in an ArrayList of Stacks, and events in 
- *the same stack are organized in reverse order for structure 
- *use. When a player has the correct item/solves apuzzle, we 
- *pop the top string in the stack to create event gameplay
- *changes.
- * 
- * @authors  John Patrick, Luis K. Pena, Sergio Costa
- * @version  1.0
- * @since    04/20/2023
- */
+*These are the text based events for our game, AirLock7.
+*Events are stored in an ArrayList of Stacks, and events in 
+*the same stack are organized in reverse order for structure 
+*use. When a player has the correct item/solves apuzzle, we 
+*pop the top string in the stack to create event gameplay
+*changes.
+* 
+* @authors  John Patrick, Luis K. Pena, Sergio Costa
+* @version  1.0
+* @since    04/20/2023
+*/
 
+//Package(s) 
 package Game;
 
+//Imports
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Stack;
+
 
 public class StoryText{
 
@@ -187,7 +190,6 @@ public class StoryText{
 
         //BRIDGE EVENT: Placing insterstellar map in bridge console
         textStacks.get(18).push("You place the interstellar map in the console and the ship's\n"
-        + "screens light up.");
-        
+        + "screens light up.");        
     }
 }
