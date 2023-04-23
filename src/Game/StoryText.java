@@ -30,7 +30,7 @@ public class StoryText{
 
     //Starting game
     String start = "You wake up in AirLock 7, feeling dazed and confused.\n"
-    + "The rest of your crew has been killed or kidnapped, and you're thankful\n"
+    + "The rest of your crew has been killed or kidnapped, and you are thankful\n"
     + "that you were quick enough to hide before the same thing happened to you.";
 
     //Loading text events
@@ -133,8 +133,7 @@ public class StoryText{
         textPoints.add(new Point(12, 4));
         textStacks.get(2).push("You enter the captain's room cautiously so as\n"
         + "not to disturb her belongings. Her room is highly organized - the\n"
-        + "captain is a stickler for rules. On her personal desk you spot an\n"
-        + "item that catches your eye.");
+        + "captain is a stickler for rules.");
 
         //CAPTAIN'S ROOM EVENT: Finding keycard
         textPoints.add(new Point(14, 2));
@@ -156,8 +155,9 @@ public class StoryText{
                 
         //ENGINE ROOM EVENT: Entering the engine room for the first time
         textPoints.add(new Point(4, 7));
-        textStacks.get(6).push("You enter the engine room and find that it is\n"
-        + "strangely silent. The hum of the ship's engine is missing.");
+        textStacks.get(6).push("You enter the engine room and find a massive\n"
+        + "piece of machinery. Ships like this require immense power\n"
+        + "for interstellar travel and the engine's size reflects this.");
 
         //ENGINE ROOM EVENT: Finding a bolt
         textPoints.add(new Point(1, 4));
@@ -165,7 +165,8 @@ public class StoryText{
 
         //ENGINE EVENT: Fixing broken down ship engine
         textPoints.add(new Point(1,6));
-        textStacks.get(8).push("The engine purrs to life.");
+        textStacks.get(8).push("The ship's engine is damaged. You use your wrench\n"
+        + "and bolt to fix it. The engine purrs to life.");
 
         //ENGINE EVENT: Finding broken down ship engine 
         textStacks.get(8).push("You find the ship's engine. It seems to be broken down.\n"
@@ -185,8 +186,8 @@ public class StoryText{
         //STORAGE ROOM EVENT: Entering the storage room for the first time
         textPoints.add(new Point(5, 3));
         textStacks.get(10).push("You enter a small room. It is full of boxes\n"
-        + "and boxes of supplies. In one corner, you spot an item that "
-        + "catches your eye.");
+        + "and boxes of supplies. The storage room is an important part of any"
+        + "space fairing vessel.");
 
         //STORAGE ROOM EVENT: Finding Wrench
         textPoints.add(new Point(7, 0));
@@ -228,13 +229,12 @@ public class StoryText{
         
         //BRIDGE EVENT: Flying home
         textPoints.add(new Point(19, 4));
-        textStacks.get(18).push("You set your destination. You are now boldly flying...home!\n"
-        + "Congratulations, spacefarer!");
+        textStacks.get(18).push("You stand in front of the ship's navigation console.\n"
+        + "You place the interstellar map in the map card slot and set set your destination.\n" 
+        + "You are now boldly flying...home! Congratulations, spacefarer!");
 
         //BRIDGE EVENT: Placing insterstellar map in bridge console
-        textStacks.get(18).push("You place the interstellar map in the console and the ship's\n"
-        + "screens light up.");        
-    }
-
-    
+        textStacks.get(18).push("You stand in front of the ship's navigation console.\n"
+        + "You notice that the map card slot is empty.");        
+    }    
 }
