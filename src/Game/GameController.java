@@ -47,6 +47,8 @@ public class GameController {
         }
         if(player.getPlayerPoint().equals(new Point(5,4))){
             vc.showPasswordArea();
+        }else{
+            vc.hidePasswordArea();
         }
     }
 
@@ -58,6 +60,11 @@ public class GameController {
             updateTextBox();
             player.checkForItem();
         }
+        if(player.getPlayerPoint().equals(new Point(5,4))){
+            vc.showPasswordArea();
+        }else{
+            vc.hidePasswordArea();
+        }
     }
 
     public void leftButton(){
@@ -67,6 +74,7 @@ public class GameController {
             updateLocationView();
             updateTextBox();
             player.checkForItem();
+            vc.hidePasswordArea();
         }
     }
 
@@ -77,6 +85,7 @@ public class GameController {
             updateLocationView();
             updateTextBox();
             player.checkForItem();
+            vc.hidePasswordArea();
         }
     }
     

@@ -33,6 +33,11 @@ ImageBackgroundPasswordField label2;
 JScrollPane textScrollPane;
 
 private Image imageStorage;
+private ImageIcon iconUP;
+private ImageIcon iconDown;
+private ImageIcon iconLeft;
+private ImageIcon iconRight;
+
 
 public ViewController(){
 
@@ -47,6 +52,15 @@ private void loadimages() {
     } catch(IOException e) {
         System.out.println(e.toString());
     }
+
+    iconUP = new ImageIcon(getClass().getResource("/Resources/UpKey.png"));
+    //Image scaleUP = iconUP.getImage();
+    //scaleUP = scaleUP.getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+    //iconUP = new ImageIcon(scaleUP);
+    iconDown = new ImageIcon(getClass().getResource("/Resources/DownKey.png"));
+    iconLeft = new ImageIcon(getClass().getResource("/Resources/LeftKey.png"));
+    iconRight = new ImageIcon(getClass().getResource("/Resources/RightKey.png"));
+
 
 }
 
@@ -64,6 +78,7 @@ public void startDisplay(){
     JPanel panelMain = new JPanel();
     panelMain.setLayout(new GridBagLayout());
     panelMain.setSize(1200, 600);
+    panelMain.setBackground(Color.gray);
     GridBagConstraints constraints = new GridBagConstraints();
     
     //Create labels with fixed size
@@ -134,8 +149,9 @@ public void startDisplay(){
 
 
     // up button --------------------------------
-    up = new JButton("^");
+    up = new JButton("");
     up.setPreferredSize(new Dimension(70, 50));
+    up.setIcon(iconUP);
     constraints = new GridBagConstraints();
     constraints.gridx = 6;
     constraints.gridy = 1;
@@ -175,6 +191,7 @@ public void startDisplay(){
     //left button ------------------------------------
     left = new JButton("<");
     left.setPreferredSize(new Dimension(50, 50));
+    left.setIcon(iconLeft);
     constraints = new GridBagConstraints();
     constraints.gridx = 5;
     constraints.gridy = 2;
@@ -191,6 +208,7 @@ public void startDisplay(){
     down = new JButton("V");
     down.setPreferredSize(new Dimension(50, 50));
     constraints = new GridBagConstraints();
+    down.setIcon(iconDown);
     constraints.gridx = 6;
     constraints.gridy = 2;
     constraints.gridwidth = 1;
@@ -205,6 +223,7 @@ public void startDisplay(){
     right = new JButton(">");
     right.setPreferredSize(new Dimension(50, 50));
     constraints = new GridBagConstraints();
+    right.setIcon(iconRight);
     constraints.gridx = 7;
     constraints.gridy = 2;
     constraints.gridwidth = 1;
