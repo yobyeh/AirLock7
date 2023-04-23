@@ -8,14 +8,20 @@
 */
 
 //Package(s)
-package Game;
+package Structure;
 
 //Interface
-private interface Map{
+interface Map{
 
-    public void loadMapToArray();
+    private void loadMapToArray(){
 
-    public void createAndLoad2DArray();
+    }
 
-    public void printMapToConsole();    
+    private void createAndLoad2DArray(){
+
+    }
+
+    private void printMapToConsole(){
+        
+    }
 }

@@ -82,7 +82,7 @@ public class StoryText{
 
         // }
 
-        // //map
+        //map
         if(p.equals(new Point(18, 3))){
 
             if(textStacks.get(18).size() > 1){

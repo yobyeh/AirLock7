@@ -36,7 +36,7 @@ import Game.ViewController;
 //once item moved over, is stored as string in hash table owned by player 
 
 
-public class GameMap {
+public class GameMap implements Map{
 
     //Instantiating and intializing x:y coordinates
     int xSize = 21;
