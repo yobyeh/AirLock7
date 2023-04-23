@@ -31,6 +31,10 @@ JButton up;
 JButton down;
 JButton left;
 JButton right;
+JButton map;
+
+//map popup
+JFrame mapWindow;
 
 //Instantiating controller
 GameController gc;
@@ -48,6 +52,7 @@ private ImageIcon iconUP;
 private ImageIcon iconDown;
 private ImageIcon iconLeft;
 private ImageIcon iconRight;
+private ImageIcon iconMap;
 
 
 public ViewController(){
@@ -73,6 +78,7 @@ private void loadimages() {
     iconDown = new ImageIcon(getClass().getResource("/Resources/DownKey.png"));
     iconLeft = new ImageIcon(getClass().getResource("/Resources/LeftKey.png"));
     iconRight = new ImageIcon(getClass().getResource("/Resources/RightKey.png"));
+    iconMap = new ImageIcon(getClass().getResource("/Resources/Map.png"));
 
 
 }
@@ -93,11 +99,12 @@ public void startDisplay(){
     panelMain.setBackground(Color.gray);
     GridBagConstraints constraints = new GridBagConstraints();
     
-    //Creatin labels with fixed size
-    JLabel label1 = new JLabel("");
-    label1.setBackground(Color.gray);
-    label1.setOpaque(true);
-    label1.setPreferredSize(new Dimension(110, 50));
+    //on screen elements
+    map = new JButton("MAP");
+    map.addActionListener(this);
+    //map.setBackground(Color.gray);
+    map.setOpaque(true);
+    map.setPreferredSize(new Dimension(110, 50));
     constraints.gridx = 0;
     constraints.gridy = 0;
     constraints.gridwidth = 2;
@@ -105,7 +112,8 @@ public void startDisplay(){
     constraints.weightx = 1;
     constraints.weighty = 1;
     constraints.fill = GridBagConstraints.BOTH;
-    panelMain.add(label1, constraints);
+    map.setVisible(false);
+    panelMain.add(map, constraints);
 
     ////-----------Text Event Display Pannel-----------////
     text = new JTextPane();
@@ -369,6 +377,19 @@ public void actionPerformed(ActionEvent e) {
     if(e.getSource() == right){
         gc.rightButton();
     }
+    if(e.getSource() == map){
+
+        mapWindow = new JFrame("MAP");
+
+        JLabel imageLabel = new JLabel(iconMap);
+        mapWindow.add(imageLabel);
+
+        mapWindow.pack();
+        mapWindow.setLocationRelativeTo(null);
+        mapWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        mapWindow.setVisible(true);
+
+    }
 
 }
 
@@ -379,6 +400,10 @@ public void showPasswordArea(){
 
 public void hidePasswordArea(){
     label2.setVisible(false);
+}
+
+public void showMapBtn(){
+    map.setVisible(true);
 }
 
 public String getPassword(){

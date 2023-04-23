@@ -59,6 +59,11 @@ public class GameController {
             updateTextBox();
             if(player.checkForItem()){
                 st.popLocation(player.getPlayerPoint());
+
+                //if map show map button
+                if(player.getPlayerPoint().equals(new Point(18, 3))){
+                    vc.showMapBtn();
+                }
             }
         }
 
@@ -78,7 +83,14 @@ public class GameController {
             player.setY(player.getY() + 1);
             updateLocationView();
             updateTextBox();
-            player.checkForItem();
+            if(player.checkForItem()){
+                st.popLocation(player.getPlayerPoint());
+
+                //if map show map button
+                if(player.getPlayerPoint().equals(new Point(18, 3))){
+                    vc.showMapBtn();
+                }
+            }
         }
         
         if(player.getPlayerPoint().equals(new Point(5,4))){
@@ -97,7 +109,14 @@ public class GameController {
             player.setX(player.getX() - 1);
             updateLocationView();
             updateTextBox();
-            player.checkForItem();
+            if(player.checkForItem()){
+                st.popLocation(player.getPlayerPoint());
+
+                //if map show map button
+                if(player.getPlayerPoint().equals(new Point(18, 3))){
+                    vc.showMapBtn();
+                }
+            }
             vc.hidePasswordArea();
         }
     }
@@ -109,7 +128,14 @@ public class GameController {
             player.setX(player.getX() + 1);
             updateLocationView();
             updateTextBox();
-            player.checkForItem();
+            if(player.checkForItem()){
+                st.popLocation(player.getPlayerPoint());
+
+                //if map show map button
+                if(player.getPlayerPoint().equals(new Point(18, 3))){
+                    vc.showMapBtn();
+                }
+            }
             vc.hidePasswordArea();
         }
     }

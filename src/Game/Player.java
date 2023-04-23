@@ -76,6 +76,7 @@ public class Player {
 
             inventory.giveItem(getPlayerPoint());
             inventory.print();
+
             return true;
         }else{
             return false;
