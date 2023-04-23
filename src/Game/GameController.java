@@ -57,7 +57,9 @@ public class GameController {
             player.setY(player.getY() - 1);
             updateLocationView();
             updateTextBox();
-            player.checkForItem();
+            if(player.checkForItem()){
+                st.popLocation(player.getPlayerPoint());
+            }
         }
 
         if(player.getPlayerPoint().equals(new Point(5,4))){

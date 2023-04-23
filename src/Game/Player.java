@@ -71,11 +71,14 @@ public class Player {
     }
 
     //Checking for items
-    public void checkForItem(){
-        if(inventory.search(getPlayerPoint())){
+    public boolean checkForItem(){
+        if(inventory.search(getPlayerPoint()) && !inventory.alreadyHasItem(getPlayerPoint())){
 
-            inventory.getItem(getPlayerPoint());
+            inventory.giveItem(getPlayerPoint());
             inventory.print();
+            return true;
+        }else{
+            return false;
         }
     }
 }

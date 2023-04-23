@@ -41,7 +41,7 @@ HashTable table;
     }
 
     //Item getters
-    public void getItem(Point itemPoint){
+    public void giveItem(Point itemPoint){
 
         Item item = table.search(itemPoint);
         item.has = true;    
@@ -77,4 +77,18 @@ HashTable table;
             return false;
         }
     }
+
+    //Searching for items
+    public boolean alreadyHasItem(Point p) {
+        
+        if(table.search(p) != null && table.search(p).has){
+            return true;
+        }
+        
+        else{
+            return false;
+        }
+    }
+
+
 }

@@ -142,5 +142,7 @@ public class HashTable {
                 }
             }
         }
+
+        System.out.println(" ");
     }
 }
