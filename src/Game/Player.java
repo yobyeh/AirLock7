@@ -3,6 +3,7 @@ package Game;
 import java.awt.Point;
 
 import Structure.HashTable;
+import Structure.Inventory;
 
 //todo: display text dosent repeat "YAY YOU PICKED THIS UP" every time.
 //stores items in a hash table 
@@ -13,6 +14,7 @@ public class Player {
     //players current location 0s are smallest value not 1
     private int xLocation;
     private int yLocation;
+    private Inventory inventory;
 
     //stores a hash table called inventory
     //HashTable inventory = new HashTable();
@@ -21,19 +23,19 @@ public class Player {
     public Player(int x, int y){
         xLocation = x;
         yLocation = y;
+
+        inventory = new Inventory();
     }
 
     //remembers picked up items 
-    public void giveItem(String s){
-        //inventory.addItem("Item Name");
+    public void giveItem(Point itemPoint){
+        inventory.getItem(itemPoint);
     }
 
-    //checks for items by string
-    public boolean has(String string) {
+    //checks for items by point
+    public boolean has(Point itemPoint) {
 
-        //search function on inventory
-
-        return false;
+        return inventory.hasItem(itemPoint);
     }
 
     public int getX(){

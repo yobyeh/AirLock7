@@ -4,31 +4,18 @@ import java.awt.Point;
 //key is location
 //value is item name
 
-//items..
-//Map
-//Code
-//Key
-//Wrench
-//Bolt
+
 public class Item {
     
-    Point p;
+    Point point;
     String itemName;
+    public Boolean has;
 
-    public Point(Point p, String s){
+    public Item(Point point, String itemName){
+
+        this.point = point;
+        this.itemName = itemName;
 
     }
-
-    //p = new Point(4,3);
-    
-
-    //x to String
-    //y to String
-    //concat 
-
-    //"34".hash
-
-
-
 
 }
