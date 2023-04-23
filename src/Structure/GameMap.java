@@ -142,7 +142,7 @@ public class GameMap {
     private boolean lockedStorage() {
 
         if(storageLock == true){
-            vc.showPasswordArea();
+            //vc.showPasswordArea();
             if(vc.getPassword().equals("4571")){
                 storageLock = false;
                 return false;

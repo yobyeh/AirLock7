@@ -1,4 +1,5 @@
 package Game;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
@@ -6,6 +7,8 @@ import javax.swing.text.StyleConstants;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
 //pop up woindow for map.. map button
 //splash screen ?
@@ -25,7 +28,27 @@ GameController gc;
 
 JTextPane text;
 JLabel locationBox;
-JTextArea label2;
+//JTextArea label2;
+ImageBackgroundPasswordField label2;
+JScrollPane textScrollPane;
+
+private Image imageStorage;
+
+public ViewController(){
+
+    loadimages();
+
+}
+
+private void loadimages() {
+
+    try{
+        imageStorage = ImageIO.read(getClass().getResource("/Resources/storagePassword1.png"));
+    } catch(IOException e) {
+        System.out.println(e.toString());
+    }
+
+}
 
 public void giveGameController(GameController gc){
     this.gc = gc;
@@ -47,6 +70,7 @@ public void startDisplay(){
     JLabel label1 = new JLabel("");
     label1.setBackground(Color.gray);
     label1.setOpaque(true);
+    label1.setPreferredSize(new Dimension(110, 50));
     constraints.gridx = 0;
     constraints.gridy = 0;
     constraints.gridwidth = 2;
@@ -62,20 +86,26 @@ public void startDisplay(){
     StyleConstants.setFontSize(attributes, 18);
     StyleConstants.setFontFamily(attributes, "Dialog");
     text.setParagraphAttributes(attributes, true);
+
+
+
+    textScrollPane = new JScrollPane(text);
+    textScrollPane.setPreferredSize(new Dimension(300, 60));
     constraints = new GridBagConstraints();
     constraints.gridx = 2;
     constraints.gridy = 0;
     constraints.gridwidth = 4;
     constraints.weightx = 1;
-    constraints.weighty = 1;
+    constraints.weighty = 0.9;
     constraints.fill = GridBagConstraints.BOTH;
-    panelMain.add(text, constraints);
+    panelMain.add(textScrollPane, constraints);
 
-    //.get 
-    label2 = new JTextArea("Storage Password");
+    //Storage Password
+    label2 = new ImageBackgroundPasswordField(imageStorage);
     label2.setFont(new Font("Dialog", Font.BOLD, 14));
     label2.setBackground(Color.gray);
-    label2.setOpaque(true);
+    //label2.setOpaque(true);
+    //label2.setPreferredSize(new Dimension(400, 50));
     constraints = new GridBagConstraints();
     constraints.gridx = 6;
     constraints.gridy = 0;
@@ -87,23 +117,25 @@ public void startDisplay(){
     label2.setVisible(false);
     panelMain.add(label2, constraints);
 
-    locationBox = new JLabel("Current Location", SwingConstants.CENTER);
+    locationBox = new JLabel("Current Location: 12,9", SwingConstants.CENTER);
     locationBox.setFont(new Font("Dialog", Font.BOLD, 14));
     locationBox.setBackground(Color.gray);
     locationBox.setOpaque(true);
+    locationBox.setPreferredSize(new Dimension(300, 50));
     constraints = new GridBagConstraints();
     constraints.gridx = 0;
     constraints.gridy = 1;
     constraints.gridwidth = 6;
     //constraints.gridheight = 1;
     constraints.weightx = 1;
-    constraints.weighty = 1;
+    constraints.weighty = 0.9;
     constraints.fill = GridBagConstraints.BOTH;
     panelMain.add(locationBox, constraints);
 
 
     // up button --------------------------------
     up = new JButton("^");
+    up.setPreferredSize(new Dimension(70, 50));
     constraints = new GridBagConstraints();
     constraints.gridx = 6;
     constraints.gridy = 1;
@@ -128,19 +160,21 @@ public void startDisplay(){
     constraints.fill = GridBagConstraints.BOTH;
     panelMain.add(label3, constraints);
 
-    JLabel items = new JLabel("Items", SwingConstants.CENTER);
+    JLabel items = new JLabel("", SwingConstants.CENTER);
+    //items.setPreferredSize(new Dimension(600, 50));
     constraints = new GridBagConstraints();
     constraints.gridx = 0;
     constraints.gridy = 2;
     constraints.gridwidth = 5;
     //constraints.gridheight = 1;
     constraints.weightx = 1;
-    constraints.weighty = 1;
+    constraints.weighty = 0.9;
     constraints.fill = GridBagConstraints.BOTH;
     panelMain.add(items, constraints);
 
     //left button ------------------------------------
     left = new JButton("<");
+    left.setPreferredSize(new Dimension(50, 50));
     constraints = new GridBagConstraints();
     constraints.gridx = 5;
     constraints.gridy = 2;
@@ -155,6 +189,7 @@ public void startDisplay(){
 
     //down button ------------------------------------
     down = new JButton("V");
+    down.setPreferredSize(new Dimension(50, 50));
     constraints = new GridBagConstraints();
     constraints.gridx = 6;
     constraints.gridy = 2;
@@ -168,6 +203,7 @@ public void startDisplay(){
 
     //right button -----------------------------------
     right = new JButton(">");
+    right.setPreferredSize(new Dimension(50, 50));
     constraints = new GridBagConstraints();
     constraints.gridx = 7;
     constraints.gridy = 2;
@@ -241,7 +277,7 @@ public void startDisplay(){
     constraints.gridy = 3;
     constraints.gridwidth = 1;
     //constraints.gridheight = 1;
-    constraints.weightx = 1;
+    constraints.weightx = 0.9;
     //constraints.weighty = 1;
     //constraints.fill = GridBagConstraints.BOTH;
     panelMain.add(space5, constraints);

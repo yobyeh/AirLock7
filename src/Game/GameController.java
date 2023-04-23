@@ -1,5 +1,7 @@
 package Game;
 
+import java.awt.Point;
+
 import Structure.GameMap;
 
 
@@ -42,6 +44,9 @@ public class GameController {
             updateLocationView();
             updateTextBox();
             player.checkForItem();
+        }
+        if(player.getPlayerPoint().equals(new Point(5,4))){
+            vc.showPasswordArea();
         }
     }
 
