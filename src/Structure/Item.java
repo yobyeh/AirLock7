@@ -9,7 +9,7 @@ public class Item {
     
     Point point;
     String itemName;
-    public Boolean has;
+    public Boolean has = false;
 
     public Item(Point point, String itemName){
 

@@ -125,7 +125,7 @@ public class HashTable {
                 for(int j = 0; j < table[i].size(); j++){
 
                     Item item = table[i].get(j);
-                    System.out.println(item.point.toString() + " " + item.itemName);
+                    System.out.println(item.point.toString() + " " + item.itemName + " " + item.has);
                 }
             }
         }

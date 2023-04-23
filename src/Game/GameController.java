@@ -41,6 +41,7 @@ public class GameController {
             player.setY(player.getY() - 1);
             updateLocationView();
             updateTextBox();
+            player.checkForItem();
         }
     }
 
@@ -50,6 +51,7 @@ public class GameController {
             player.setY(player.getY() + 1);
             updateLocationView();
             updateTextBox();
+            player.checkForItem();
         }
     }
 
@@ -59,6 +61,7 @@ public class GameController {
             player.setX(player.getX() - 1);
             updateLocationView();
             updateTextBox();
+            player.checkForItem();
         }
     }
 
@@ -68,6 +71,7 @@ public class GameController {
             player.setX(player.getX() + 1);
             updateLocationView();
             updateTextBox();
+            player.checkForItem();
         }
     }
     

@@ -25,12 +25,10 @@ public class Player {
         yLocation = y;
 
         inventory = new Inventory();
+        inventory.print();
     }
 
-    //remembers picked up items 
-    public void giveItem(Point itemPoint){
-        inventory.getItem(itemPoint);
-    }
+    
 
     //checks for items by point
     public boolean has(Point itemPoint) {
@@ -56,6 +54,14 @@ public class Player {
 
     public Point getPlayerPoint(){
         return new Point(xLocation, yLocation);
+    }
+
+    public void checkForItem(){
+        if(inventory.search(getPlayerPoint())){
+
+            inventory.getItem(getPlayerPoint());
+            inventory.print();
+        }
     }
 
 }

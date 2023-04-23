@@ -5,8 +5,8 @@ import java.awt.Point;
 public class Inventory {
 //items..
 //Map 18,3.. 
-//Key 13,2..
-//Wrench 8,0..
+//Key Card 14,2..
+//Wrench 7,0..
 //Bolt 1,4..
 
 HashTable table;
@@ -20,8 +20,8 @@ HashTable table;
     private void loadInventory() {
 
         table.put(new Point(18, 3), "Map");
-        table.put(new Point(13, 2), "Key");
-        table.put(new Point(8, 0), "Wrench");
+        table.put(new Point(14, 2), "Key Card");
+        table.put(new Point(7, 0), "Wrench");
         table.put(new Point(1, 4), "Bolt");
 
     }
@@ -35,8 +35,22 @@ HashTable table;
 
     public Boolean hasItem(Point itemPoint){
 
-        if(table.search(itemPoint) != null){
+        if(table.search(itemPoint) == null){
+            System.out.println("Error 1");
+            return false;
+        }else{
+            return table.search(itemPoint).has;
+        }
+    }
 
+    public void print(){
+        
+        table.print();
+    }
+
+    public boolean search(Point p) {
+        
+        if(table.search(p) != null){
             return true;
         }else{
             return false;
