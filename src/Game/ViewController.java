@@ -280,6 +280,10 @@ public void setTextbox(String s){
     text.setText(s);
 }
 
+public void clearTextbox(){
+    text.setText("");
+}
+
 public void setLocationBox(String s){
     locationBox.setText(s);
 }
@@ -313,6 +317,11 @@ public void hidePasswordArea(){
 public String getPassword(){
 
     return label2.getText();
+}
+
+
+public void displayText(String text) {
+    setTextbox(text);
 }
 
 

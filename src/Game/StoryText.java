@@ -28,7 +28,7 @@ public class StoryText {
         loadText();
     }
 
-    //make display text ----------------------------------------
+    
     public Boolean textCheck(Point p){
 
         for(Point point : textPoints){
@@ -37,6 +37,19 @@ public class StoryText {
             }
         }
         return false;
+    }
+
+    public String getPointText(Point p) {
+
+        for(int i = 0; i < textPoints.size(); i++){
+
+            if(p.equals(textPoints.get(i))){
+
+                return textStacks.get(i).peek();
+
+            }
+        }
+        return null;
     }
 
     private void loadText(){
@@ -50,18 +63,18 @@ public class StoryText {
 
         //Event: Finding broken down ship engine
         //Location: (4, 8) 
-        textPoints.add(new Point(4,4));
-        textStacks.get(0).add("You find the ships engine. It seems to be broken down.\n"
+        textPoints.add(new Point(1,6));
+        textStacks.get(0).push("You find the ships engine. It seems to be broken down.\n"
         + "You might be able to fix it with the correct tools");
 
         //Event: Finding keypad for storage room
         //Location: (6, 5)
-        textPoints.add(new Point(5,4));
-        textStacks.get(1).add("You find a keypad that requires 4 numbers in order to unlock.");
+       //textPoints.add(new Point(5,4));
+        textStacks.get(1).push("You find a keypad that requires 4 numbers in order to unlock.");
 
         //Event: Unsuccessfully guessing storage room password
-        textPoints.add(new Point(4,2));
-        textStacks.get(2).add("The code you enter is incorrect. Nothing happens.");
+        //textPoints.add(new Point(4,2));
+        textStacks.get(2).push("The code you enter is incorrect. Nothing happens.");
 
         //Event: Successfully guessing storage room password
         //Location: (6, 5)
@@ -173,4 +186,7 @@ public class StoryText {
         + "The captain's seat looks strange without her on there, but most of the\n"
         + "ship's functionality seems to be intact.";
     }
+
+
+    
 }

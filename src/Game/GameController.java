@@ -40,6 +40,7 @@ public class GameController {
         if(map.moveCheck("up", player.getX(), player.getY())){
             player.setY(player.getY() - 1);
             updateLocationView();
+            updateTextBox();
         }
     }
 
@@ -78,8 +79,13 @@ public class GameController {
     
     public void updateTextBox(){
 
-        
-
+        if(st.textCheck(player.getPlayerPoint())){
+            
+            vc.displayText(st.getPointText(player.getPlayerPoint()));
+            
+        }else{
+            vc.clearTextbox();
+        }
 
 
     }
