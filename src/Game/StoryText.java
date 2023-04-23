@@ -109,16 +109,20 @@ public class StoryText{
         ////-----------These are engine room related events-----------////
                 
         //ENGINE ROOM EVENT: Entering the engine room for the first time
-        textPoints.add(new Point(3, 7));
+        textPoints.add(new Point(4, 7));
         textStacks.get(6).push("You enter the engine room and find that it is\n"
         + "strangely silent. The hum of the ship's engine is missing.");
 
+        //ENGINE ROOM EVENT: Finding a bolt
+        textPoints.add(new Point(1, 4));
+        textStacks.get(7).push("You rummage through a large box and find a bolt!\n");
+
         //ENGINE EVENT: Fixing broken down ship engine
         textPoints.add(new Point(1,6));
-        textStacks.get(7).push("The engine purrs to life.");
+        textStacks.get(8).push("The engine purrs to life.");
 
         //ENGINE EVENT: Finding broken down ship engine 
-        textStacks.get(7).push("You find the ship's engine. It seems to be broken down.\n"
+        textStacks.get(8).push("You find the ship's engine. It seems to be broken down.\n"
         + "You might be able to fix it with the correct tools");
 
 
@@ -126,30 +130,30 @@ public class StoryText{
 
         //STORAGE ROOM EVENT: Successfully guessing storage room password
         textPoints.add(new Point(5, 4));
-        textStacks.get(8).push("You guess the passcode correctly. The door to storage slides open!");
+        textStacks.get(9).push("You guess the passcode correctly. The door to storage slides open!");
 
         //STORAGE ROOM EVENT: Finding keypad for storage room
-        textStacks.get(8).push("You find the Storage Room door. It is locked.\n"
+        textStacks.get(9).push("You find the Storage Room door. It is locked.\n"
         + "You find a keypad that requires 4 numbers in order to open it.");
 
         //STORAGE ROOM EVENT: Entering the storage room for the first time
         textPoints.add(new Point(5, 3));
-        textStacks.get(9).push("You enter a small room. It is full of boxes\n"
+        textStacks.get(10).push("You enter a small room. It is full of boxes\n"
         + "and boxes of supplies. In one corner, you spot an item that "
         + "catches your eye.");
 
-        //STORAGE ROOM EVENT: Finding Wrench and Bolt
+        //STORAGE ROOM EVENT: Finding Wrench
         textPoints.add(new Point(7, 0));
-        textStacks.get(10).push("You check the table in front of you and find a wrench and a bolt!");
+        textStacks.get(11).push("You check the table in front of you and find a wrench!");
 
         //STORAGE ROOM EVENT: Rummaging through boxes 1
         textPoints.add(new Point(5, 1));
-        textStacks.get(11).push("You find a set of boxes and check inside.\n" 
+        textStacks.get(12).push("You find a set of boxes and check inside.\n" 
         + "They are empty.");
 
         //STORAGE ROOM EVENT: Rummaging through boxes 2
         textPoints.add(new Point(7, 2));
-        textStacks.get(12).push("You find a set of boxes and check inside. There are\n" 
+        textStacks.get(13).push("You find a set of boxes and check inside. There are\n" 
         + "stacks and stacks of Captain Force comic books. You wonder who they belong to.");
 
 
@@ -157,33 +161,32 @@ public class StoryText{
 
         //BRDIGE EVENT: Finding the locked door to the bridge
         textPoints.add(new Point(16, 5));
-        textStacks.get(13).push("You find the door to the bridge. You notice\n"
+        textStacks.get(14).push("You find the door to the bridge. You notice\n"
         + "the pannel on side requiring a keycard to enter.");
 
         //BRDIGE EVENT: Entering the bridge for the first time
         textPoints.add(new Point(17, 5));
-        textStacks.get(14).push("You enter a large room full of chairs and command consoles.\n"
+        textStacks.get(15).push("You enter a large room full of chairs and command consoles.\n"
         + "The captain's seat looks strange without her on there, but most of the\n"
         + "ship's functionality seems to be intact.");
 
         //Checking bridge control pannels
         textPoints.add(new Point(19, 3));
-        textStacks.get(15).push("You check the control pannel in front of you. You do not\n"
+        textStacks.get(16).push("You check the control pannel in front of you. You do not\n"
         + "need it to fly home, so you leave it alone.");
 
         //BRIDGE EVENT: Finding map
         textPoints.add(new Point(18, 3));
-        textStacks.get(16).push("You find the ship map and the instellar map on\n"
+        textStacks.get(17).push("You find the ship map and the instellar map on\n"
         + "the science officer's counter.");
-        textStacks.get(16).pop();
         
         //BRIDGE EVENT: Flying home
         textPoints.add(new Point(19, 4));
-        textStacks.get(17).push("You set your destination. You are now boldly flying...home!\n"
+        textStacks.get(18).push("You set your destination. You are now boldly flying...home!\n"
         + "Congratulations, spacefarer!");
 
         //BRIDGE EVENT: Placing insterstellar map in bridge console
-        textStacks.get(17).push("You place the interstellar map in the console and the ship's\n"
+        textStacks.get(18).push("You place the interstellar map in the console and the ship's\n"
         + "screens light up.");
         
     }
