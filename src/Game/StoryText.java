@@ -131,7 +131,7 @@ public class StoryText{
 
         //Event: Entering the captain's room for the first time
         textPoints.add(new Point(12, 4));
-        textStacks.get(2).push("You enter the captain's room cautiously so as\n"
+        textStacks.get(2).push("You stand in the captain's room cautiously so as\n"
         + "not to disturb her belongings. Her room is highly organized - the\n"
         + "captain is a stickler for rules.");
 
@@ -155,7 +155,7 @@ public class StoryText{
                 
         //ENGINE ROOM EVENT: Entering the engine room for the first time
         textPoints.add(new Point(4, 7));
-        textStacks.get(6).push("You enter the engine room and find a massive\n"
+        textStacks.get(6).push("You stand in the engine room and find a massive\n"
         + "piece of machinery. Ships like this require immense power\n"
         + "for interstellar travel and the engine's size reflects this.");
 
@@ -185,7 +185,7 @@ public class StoryText{
 
         //STORAGE ROOM EVENT: Entering the storage room for the first time
         textPoints.add(new Point(5, 3));
-        textStacks.get(10).push("You enter a small room. It is full of boxes\n"
+        textStacks.get(10).push("You stand in a small room. It is full of boxes\n"
         + "and boxes of supplies. The storage room is an important part of any"
         + "space fairing vessel.");
 
@@ -213,7 +213,7 @@ public class StoryText{
 
         //BRDIGE EVENT: Entering the bridge for the first time
         textPoints.add(new Point(17, 5));
-        textStacks.get(15).push("You enter a large room full of chairs and command consoles.\n"
+        textStacks.get(15).push("You stand in a large room full of chairs and command consoles.\n"
         + "The captain's seat looks strange without her on there, but most of the\n"
         + "ship's functionality seems to be intact.");
 
@@ -235,6 +235,10 @@ public class StoryText{
 
         //BRIDGE EVENT: Placing insterstellar map in bridge console
         textStacks.get(18).push("You stand in front of the ship's navigation console.\n"
-        + "You notice that the map card slot is empty.");        
+        + "You notice that the map card slot is empty.");    
+        
+        //BRIDGE EVENT: Encountering navigation pannel while engine is off
+        textStacks.get(18).push("You stand in front of the ship's navigation console.\n"
+        + "The engine is offline, so the console remains silent.");  
     }    
 }
