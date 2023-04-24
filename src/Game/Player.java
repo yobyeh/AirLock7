@@ -16,8 +16,6 @@ import java.awt.Point;
 import Structure.HashTable;
 import Structure.Inventory;
 
-//todo: display text dosent repeat "YAY YOU PICKED THIS UP" every time.
-//stores items in a hash table 
 
 public class Player {
 
@@ -25,9 +23,6 @@ public class Player {
     private int xLocation;
     private int yLocation;
     private Inventory inventory;
-
-    //stores a hash table called inventory
-    //HashTable inventory = new HashTable();
 
     //Function to intialize player
     public Player(int x, int y){

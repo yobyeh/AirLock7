@@ -63,7 +63,7 @@ public class StoryText{
         return null;
     }
 
-    //hapens once per item gained at item point.
+    //Checks if item has been encountered
     public void popLocation(Point p) {
 
         for(int i = 0; i < textPoints.size(); i++){
@@ -76,34 +76,6 @@ public class StoryText{
                 
             }
         }
-
-        // //wrench
-        // if(p.equals(new Point(0, 0))){
-
-        // }
-
-        //map
-        // if(p.equals(new Point(18, 3))){
-
-        //     if(textStacks.get(18).size() > 1){
-        //         textStacks.get(18).pop();
-        //     }
-        // }
-
-        // //Bolt
-        // if(p.equals(new Point(0, 0))){
-
-        // }
-
-        // //Key Card
-        // if(p.equals(new Point(14, 2))){
-
-        //     if(textStacks.get(i).size() > 1){
-        //         textStacks.get(i).pop();
-        //     }
-
-        // }
-
     }
 
     //Function to load text events
@@ -123,8 +95,8 @@ public class StoryText{
 
         //AIRLOCK & EVENT: Airlock door locking behind you
         textPoints.add(new Point(14, 7));
-        textStacks.get(1).push("Just as you exit the room, the door shuts behind\n"
-        + "you. There is no returning to the safety of AirLock 7 anymore.");
+        textStacks.get(1).push("Just as you stand outside AirLock 7, the sensor above the door\n"
+        + " notices you. The door to the room shuts closed.");
 
 
         ////-----------These are captain's room related events-----------////
