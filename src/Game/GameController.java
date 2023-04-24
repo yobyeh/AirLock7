@@ -164,7 +164,7 @@ public class GameController {
         System.out.println("locationTextUpdate");
 
         //Checking if player fixed engine
-        if(player.getPlayerPoint().equals(new Point(1, 6)) && engineOn == false){
+        if(player.getPlayerPoint().equals(new Point(1, 6)) && engineOn == false && player.has(new Point(7, 0)) && player.has(new Point(1, 4))){
 
             st.popLocation(new Point(19, 4));
             engineOn = true;
