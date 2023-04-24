@@ -58,7 +58,7 @@ public class GameController {
             updateLocationView();
             updateTextBox();
             if(player.checkForItem()){
-                st.popLocation(player.getPlayerPoint());
+                locationTextUpdate();
 
                 //if map show map button
                 if(player.getPlayerPoint().equals(new Point(18, 3))){
@@ -84,7 +84,7 @@ public class GameController {
             updateLocationView();
             updateTextBox();
             if(player.checkForItem()){
-                st.popLocation(player.getPlayerPoint());
+                locationTextUpdate();
 
                 //if map show map button
                 if(player.getPlayerPoint().equals(new Point(18, 3))){
@@ -102,6 +102,15 @@ public class GameController {
         }
     }
 
+    // update text based on what items you have
+    private void locationTextUpdate() {
+
+        //if wrench and bolt update engine
+
+        //if engine is on update console
+
+    }
+
     //Checking for left button user input
     public void leftButton(){
         //vc.setTextbox("left");
@@ -110,7 +119,7 @@ public class GameController {
             updateLocationView();
             updateTextBox();
             if(player.checkForItem()){
-                st.popLocation(player.getPlayerPoint());
+                locationTextUpdate();
 
                 //if map show map button
                 if(player.getPlayerPoint().equals(new Point(18, 3))){
@@ -129,7 +138,7 @@ public class GameController {
             updateLocationView();
             updateTextBox();
             if(player.checkForItem()){
-                st.popLocation(player.getPlayerPoint());
+                locationTextUpdate();
 
                 //if map show map button
                 if(player.getPlayerPoint().equals(new Point(18, 3))){

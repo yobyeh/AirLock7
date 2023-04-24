@@ -83,12 +83,12 @@ public class StoryText{
         // }
 
         //map
-        if(p.equals(new Point(18, 3))){
+        // if(p.equals(new Point(18, 3))){
 
-            if(textStacks.get(18).size() > 1){
-                textStacks.get(18).pop();
-            }
-        }
+        //     if(textStacks.get(18).size() > 1){
+        //         textStacks.get(18).pop();
+        //     }
+        // }
 
         // //Bolt
         // if(p.equals(new Point(0, 0))){
