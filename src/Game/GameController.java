@@ -158,6 +158,7 @@ public class GameController {
         }
     }
 
+    //location based event triggers
     private void locationTextUpdate(){
 
         System.out.println("locationTextUpdate");

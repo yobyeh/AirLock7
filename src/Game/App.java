@@ -1,5 +1,5 @@
 /**
-*This is the maain code section for our project, AirLock7.
+*This is the main code section for our project, AirLock7.
 * 
 * @authors  John Patrick, Luis K. Pena, Sergio Costa
 * @version  1.0
