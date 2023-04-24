@@ -18,10 +18,10 @@ interface Map{
     }
 
     private void createAndLoad2DArray(){
-
+        
     }
 
     private void printMapToConsole(){
-        
+           
     }
 }

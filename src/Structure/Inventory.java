@@ -16,13 +16,9 @@ import java.awt.Point;
 
 
 public class Inventory{
-//items..
-//Map 18,3.. 
-//Key Card 14,2..
-//Wrench 7,0..
-//Bolt 1,4..
 
-HashTable table;
+    //Instantiating HashTable
+    HashTable table;
 
     //Initilizing inventory
     public Inventory(){

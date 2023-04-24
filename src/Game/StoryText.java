@@ -63,7 +63,7 @@ public class StoryText{
         return null;
     }
 
-    //hapens once per item gained at item point.
+    //Checks if item has been encountered
     public void popLocation(Point p) {
 
         for(int i = 0; i < textPoints.size(); i++){
@@ -76,34 +76,6 @@ public class StoryText{
                 
             }
         }
-
-        // //wrench
-        // if(p.equals(new Point(0, 0))){
-
-        // }
-
-        //map
-        // if(p.equals(new Point(18, 3))){
-
-        //     if(textStacks.get(18).size() > 1){
-        //         textStacks.get(18).pop();
-        //     }
-        // }
-
-        // //Bolt
-        // if(p.equals(new Point(0, 0))){
-
-        // }
-
-        // //Key Card
-        // if(p.equals(new Point(14, 2))){
-
-        //     if(textStacks.get(i).size() > 1){
-        //         textStacks.get(i).pop();
-        //     }
-
-        // }
-
     }
 
     //Function to load text events

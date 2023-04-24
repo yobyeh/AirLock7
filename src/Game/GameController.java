@@ -15,11 +15,6 @@ import java.awt.Point;
 import Structure.GameMap;
 
 
-//todo... 
-//implement text
-//items
-//doors
-
 public class GameController {
     
     //Instantiating game
@@ -60,7 +55,6 @@ public class GameController {
             updateTextBox();
             if(player.checkForItem()){
                 locationTextUpdateItem();
-                
 
                 //if map show map button
                 if(player.getPlayerPoint().equals(new Point(18, 3))){
@@ -81,7 +75,7 @@ public class GameController {
 
     //Checking for down button user input
     public void downButton(){
-        //vc.setTextbox("down");
+
         if(map.moveCheck("down", player.getX(), player.getY())){
             player.setY(player.getY() + 1);
             updateLocationView();
@@ -109,7 +103,7 @@ public class GameController {
 
     //Checking for left button user input
     public void leftButton(){
-        //vc.setTextbox("left");
+
         if(map.moveCheck("left", player.getX(), player.getY())){
             player.setX(player.getX() - 1);
             updateLocationView();
@@ -130,14 +124,13 @@ public class GameController {
 
     //Checking for right button user input
     public void rightButton(){
-        //vc.setTextbox("right");
+
         if(map.moveCheck("right", player.getX(), player.getY())){
             player.setX(player.getX() + 1);
             updateLocationView();
             updateTextBox();
             if(player.checkForItem()){
-                locationTextUpdateItem();
-                
+                locationTextUpdateItem();     
 
                 //if map show map button
                 if(player.getPlayerPoint().equals(new Point(18, 3))){
@@ -149,32 +142,27 @@ public class GameController {
         }
     }
 
-     // update text based on what items you have
-    //triggers when tiem picked up
+    //Functions for item related event triggers
     private void locationTextUpdateItem() {
 
-        //if wrench and bolt update engine
+        //If wrench and bolt update engine
         if(player.has(new Point(7, 0)) && player.has(new Point(1, 4))){
             st.popLocation(new Point(1, 6));
 
-            //if plyer fixes engine update control panel
+            //Updating control pannel if engine is fixed
             if(player.getPlayerPoint().equals(new Point(1, 6)) && engineOn == false){
 
                 st.popLocation(new Point(19, 4));
                 engineOn = true;
-            }
-
-            
+            }       
         }
-
-
     }
 
     private void locationTextUpdate(){
 
         System.out.println("locationTextUpdate");
 
-        //if plyer fixes engine update control panel
+        //Checking if player fixed engine
         if(player.getPlayerPoint().equals(new Point(1, 6)) && engineOn == false){
 
             st.popLocation(new Point(19, 4));

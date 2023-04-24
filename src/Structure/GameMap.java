@@ -21,20 +21,6 @@ import java.util.Arrays;
 import Game.Player;
 import Game.ViewController;
 
-//todo.... doors in move check 
-//implement doors
-//implement locked storage 
-//implement items
-
-//stores each locked door in a bool 
-
-//stores a 2d array of ones and zeros that is the map
-//zeros are where a player can stand... 1s are walls 
-//map should be 8:4 ratio to match when displaying on screen size
-
-//stores location of items 
-//once item moved over, is stored as string in hash table owned by player 
-
 
 public class GameMap implements Map{
 
@@ -59,8 +45,6 @@ public class GameMap implements Map{
     Point bridgeDoor = new Point(16,5);
     Boolean storageLock = true;
     Point storageDoor = new Point(5,4);
-    //Boolean airlockLock = true;
-    //Point airlockDoor = new Point(14,7);
 
     //Game map function to display location for user
     public GameMap(ViewController vc){
