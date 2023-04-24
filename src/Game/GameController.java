@@ -59,13 +59,15 @@ public class GameController {
             updateLocationView();
             updateTextBox();
             if(player.checkForItem()){
-                locationTextUpdate();
+                locationTextUpdateItem();
+                
 
                 //if map show map button
                 if(player.getPlayerPoint().equals(new Point(18, 3))){
                     vc.showMapBtn();
                 }
             }
+            locationTextUpdate();
         }
 
         if(player.getPlayerPoint().equals(new Point(5,4))){
@@ -85,13 +87,15 @@ public class GameController {
             updateLocationView();
             updateTextBox();
             if(player.checkForItem()){
-                locationTextUpdate();
+                locationTextUpdateItem();
+                
 
                 //if map show map button
                 if(player.getPlayerPoint().equals(new Point(18, 3))){
                     vc.showMapBtn();
                 }
             }
+            locationTextUpdate();
         }
         
         if(player.getPlayerPoint().equals(new Point(5,4))){
@@ -103,29 +107,6 @@ public class GameController {
         }
     }
 
-    // update text based on what items you have
-    //triggers when tiem picked up
-    private void locationTextUpdate() {
-
-        //if wrench and bolt update engine
-        if(player.has(new Point(7, 0)) && player.has(new Point(1, 4))){
-            st.popLocation(new Point(1, 6));
-
-            //if plyer fixes engine update control panel
-            if(player.getPlayerPoint().equals(new Point(1, 6)) && engineOn == false){
-
-                st.popLocation(new Point(19, 4));
-                engineOn = true;
-            }
-
-            if(player.getPlayerPoint().equals(new Point(19, 4)) && engineOn && player.has(new Point(18, 3))){
-                st.popLocation(new Point(19, 4));
-            }
-        }
-
-
-    }
-
     //Checking for left button user input
     public void leftButton(){
         //vc.setTextbox("left");
@@ -134,13 +115,15 @@ public class GameController {
             updateLocationView();
             updateTextBox();
             if(player.checkForItem()){
-                locationTextUpdate();
+                locationTextUpdateItem();
+                
 
                 //if map show map button
                 if(player.getPlayerPoint().equals(new Point(18, 3))){
                     vc.showMapBtn();
                 }
             }
+            locationTextUpdate();
             vc.hidePasswordArea();
         }
     }
@@ -153,15 +136,57 @@ public class GameController {
             updateLocationView();
             updateTextBox();
             if(player.checkForItem()){
-                locationTextUpdate();
+                locationTextUpdateItem();
+                
 
                 //if map show map button
                 if(player.getPlayerPoint().equals(new Point(18, 3))){
                     vc.showMapBtn();
                 }
             }
+            locationTextUpdate();
             vc.hidePasswordArea();
         }
+    }
+
+     // update text based on what items you have
+    //triggers when tiem picked up
+    private void locationTextUpdateItem() {
+
+        //if wrench and bolt update engine
+        if(player.has(new Point(7, 0)) && player.has(new Point(1, 4))){
+            st.popLocation(new Point(1, 6));
+
+            //if plyer fixes engine update control panel
+            if(player.getPlayerPoint().equals(new Point(1, 6)) && engineOn == false){
+
+                st.popLocation(new Point(19, 4));
+                engineOn = true;
+            }
+
+            
+        }
+
+
+    }
+
+    private void locationTextUpdate(){
+
+        System.out.println("locationTextUpdate");
+
+        //if plyer fixes engine update control panel
+        if(player.getPlayerPoint().equals(new Point(1, 6)) && engineOn == false){
+
+            st.popLocation(new Point(19, 4));
+            engineOn = true;
+            System.out.println("engine fixed");
+        }
+
+        if(engineOn && player.has(new Point(18, 3))){
+            st.popLocation(new Point(19, 4));
+            System.out.println("engine, map");
+        }
+
     }
     
     //Updating location to GUI
