@@ -66,16 +66,16 @@ public class StoryText{
     //hapens once per item gained at item point.
     public void popLocation(Point p) {
 
-        // for(int i = 0; i < textPoints.size(); i++){
+        for(int i = 0; i < textPoints.size(); i++){
 
-        //     if(p.equals(textPoints.get(i))){
+            if(p.equals(textPoints.get(i))){
 
-        //         if(textStacks.get(i).size() > 1){
-        //             textStacks.get(i).pop();
-        //         }
+                if(textStacks.get(i).size() > 1){
+                    textStacks.get(i).pop();
+                }
                 
-        //     }
-        // }
+            }
+        }
 
         // //wrench
         // if(p.equals(new Point(0, 0))){

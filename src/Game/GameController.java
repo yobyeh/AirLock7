@@ -27,6 +27,7 @@ public class GameController {
     GameMap map;
     Player player;
     StoryText st;
+    boolean engineOn = false;
 
     //Intiailizing GUI
     public GameController(ViewController vc){
@@ -103,11 +104,25 @@ public class GameController {
     }
 
     // update text based on what items you have
+    //triggers when tiem picked up
     private void locationTextUpdate() {
 
         //if wrench and bolt update engine
+        if(player.has(new Point(7, 0)) && player.has(new Point(1, 4))){
+            st.popLocation(new Point(1, 6));
 
-        //if engine is on update console
+            //if plyer fixes engine update control panel
+            if(player.getPlayerPoint().equals(new Point(1, 6)) && engineOn == false){
+
+                st.popLocation(new Point(19, 4));
+                engineOn = true;
+            }
+
+            if(player.getPlayerPoint().equals(new Point(19, 4)) && engineOn && player.has(new Point(18, 3))){
+                st.popLocation(new Point(19, 4));
+            }
+        }
+
 
     }
 
