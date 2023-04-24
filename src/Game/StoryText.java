@@ -153,7 +153,8 @@ public class StoryText{
 
         //STORAGE ROOM EVENT: Finding keypad for storage room
         textStacks.get(9).push("You find the Storage Room door. It is locked.\n"
-        + "You find a keypad that requires 4 numbers in order to open it.");
+        + "You find a keypad that requires 4 numbers in order to open it.\n" 
+        + "after entering code click up to try it");
 
         //STORAGE ROOM EVENT: Entering the storage room for the first time
         textPoints.add(new Point(5, 3));
